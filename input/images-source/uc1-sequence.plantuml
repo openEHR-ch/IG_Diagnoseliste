@@ -1,0 +1,12 @@
+@startuml uc1sequence
+title UC1 - document new health problem / new diagnosis - example pyelonephritis
+actor Physician
+actor Patient
+participant "Problem/diagnosis list"
+Patient->Physician: Shows fever and pain on left side of abdomen
+Physician->Patient: Suspects pyelonepritis
+Physician->"Problem/diagnosis list": Appends: Pyelopnehritis (Location: left, Qualifier: suspected)
+Physician->Patient: Confirms acute pyelonepritis
+Physician->"Problem/diagnosis list": Updates: Pyelopnehritis -> Acute Pyelonephritis
+Physician->"Problem/diagnosis list": Updates: (Qualifier: suspected) -> (Qualifier: confirmed)
+@enduml
